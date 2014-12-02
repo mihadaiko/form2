@@ -16,11 +16,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title></title>
+		<title>Emailing Form</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-	
 		<style type="text/css">
 		
 			input,textarea,label {display:block;margin-bottom: 15px;}
@@ -28,14 +27,14 @@
 			.error{color:red;}
 			form{width:300px;}
 		</style>
-        
+         
 	</head>
 
 	<body>
         
         <?php include('inc/header.inc.php'); ?>
 
-		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" id="contact-form" method="post">
 			<fieldset>
 				<p>
 					<label for="name">Name:</label><?php echo @$name_error; ?>
@@ -54,6 +53,19 @@
 		</form>
         
                 <?php include('inc/footer.inc.php'); ?>
+        	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <script>
+         $(document).ready(function(){
+         $('#contact-form').submit(function(e){
+             if($('#name').val == '' || $('#email').val() == ''){
+               alert('Please fill out the Name and Email feilds');
+               e.preventDefault();
+             }
+         });
+         });
+    
+        </script>
 
 	</body>
 </html>

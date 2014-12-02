@@ -7,9 +7,9 @@
 // You should not need to edit anything below here, unless you wish to add or remove form fields
 //for your form.
 
-$name 			= 		'Write your name here.';
-$email			= 		'Write your email address';
-$message 		= 		'Write your message here.';
+$name 			= 		'Name';
+$email			= 		'Email';
+$message 		= 		'Message';
 
 
 if(@$_POST['submitted'])
